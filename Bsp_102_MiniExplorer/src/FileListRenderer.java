@@ -1,13 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author marce
- */
-public class FileListRenderer {
+import java.awt.Component;
+import javax.swing.JList;
+import javax.swing.ListCellRenderer;
+
+
+public class FileListRenderer implements ListCellRenderer{
+
+    @Override
+    public Component getListCellRendererComponent(JList jlist, Object e, int i, boolean bln, boolean bln1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
