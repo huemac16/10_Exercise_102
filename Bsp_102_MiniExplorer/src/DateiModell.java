@@ -47,6 +47,10 @@ public class DateiModell extends AbstractListModel {
 
     }
 
+    public String getCurrentDirectory() {
+        return data.get(1).getParent();
+    }
+
     @Override
     public int getSize() {
         return data.size();
@@ -55,6 +59,7 @@ public class DateiModell extends AbstractListModel {
     @Override
     public Object getElementAt(int i) {
         return data.get(i);
+
     }
 
 }

@@ -25,17 +25,13 @@ public class FileListRenderer implements ListCellRenderer {
                 label.setBackground(new Color(230, 230, 230));
                 label.setFont(new Font("Courier New", Font.ITALIC + Font.BOLD, 12));
             }
-            
-             if (d.isDirectory() || d.getName().equals("..")) {
+
+            if (d.isDirectory() || d.getName().equals("..")) {
                 label.setBackground(isSelected ? Color.GRAY : new Color(200, 200, 200));
             } else if (d.isFile()) {
                 label.setBackground(isSelected ? Color.GRAY : new Color(230, 230, 230));
-                
-            }
-            
-            
 
-            
+            }
 
         }
 

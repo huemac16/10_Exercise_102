@@ -15,6 +15,7 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
         list.setModel(lm);
         list.setCellRenderer(new FileListRenderer());
         lm.showCurrent(main.getAbsolutePath());
+        this.setTitle(lm.getCurrentDirectory());
 
     }
 
@@ -64,13 +65,15 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
 
             } else {
                 try {
-                    
+
                     main = new File(lm.showNext(main.getAbsolutePath(), list.getSelectedIndex()));
 
                 } catch (Exception e) {
                 }
 
             }
+
+            this.setTitle(lm.getCurrentDirectory());
         }
 
 
