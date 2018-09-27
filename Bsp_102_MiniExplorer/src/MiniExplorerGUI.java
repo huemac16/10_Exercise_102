@@ -13,6 +13,7 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
     public MiniExplorerGUI() {
         initComponents();
         list.setModel(lm);
+        list.setCellRenderer(new FileListRenderer());
         lm.showCurrent(main.getAbsolutePath());
 
     }
