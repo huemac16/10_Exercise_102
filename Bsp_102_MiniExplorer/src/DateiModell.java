@@ -1,6 +1,7 @@
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.AbstractListModel;
 
 public class DateiModell extends AbstractListModel {
@@ -15,9 +16,14 @@ public class DateiModell extends AbstractListModel {
         for (File f : file.listFiles()) {
             data.add(new Data(f.getAbsolutePath()));
         }
+        sort();
+        fireContentsChanged(this, 0, data.size() - 1);
 
-        fireIntervalAdded(this, data.size() - 1, data.size() - 1);
+    }
 
+    public void sort() {
+        Collections.sort(data, new FileComparer());
+        fireContentsChanged(this, 0, data.size() - 1);
     }
 
     @Override
