@@ -62,7 +62,9 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
                 }
 
             } else {
-                
+               
+                lm.showNext(main.getAbsolutePath(), list.getSelectedIndex());
+
             }
         }
 
