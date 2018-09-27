@@ -9,6 +9,7 @@ public class DateiModell extends AbstractListModel {
     private ArrayList<Data> data = new ArrayList<>();
 
     public void showCurrent(String path) {
+        data.clear();
         File file = new File(path);
 
         data.add(new Data(".."));
@@ -25,6 +26,8 @@ public class DateiModell extends AbstractListModel {
         Collections.sort(data, new FileComparer());
         fireContentsChanged(this, 0, data.size() - 1);
     }
+
+    
 
     @Override
     public int getSize() {

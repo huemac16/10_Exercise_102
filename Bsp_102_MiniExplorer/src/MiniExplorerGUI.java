@@ -14,6 +14,7 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
         initComponents();
         list.setModel(lm);
         lm.showCurrent(main.getAbsolutePath());
+
     }
 
     @SuppressWarnings("unchecked")
@@ -49,8 +50,23 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
 
     private void listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listMouseClicked
         if (evt.getClickCount() >= 2) {
-            String spPath = main.getAbsolutePath().replaceAll("\\", ";");
+            if (list.getSelectedIndex() == 0) {
+                try {
+                    String spPath = main.getAbsolutePath().replace("\\", ";");
+                    String[] split = spPath.split(";");
+
+                    lm.showCurrent(main.getAbsolutePath().substring(0, main.getAbsolutePath().length() - (split[split.length - 1].length())));
+                    main = new File(main.getAbsolutePath().substring(0, main.getAbsolutePath().length() - (split[split.length - 1].length())));
+
+                } catch (Exception e) {
+                }
+
+            } else {
+                
+            }
         }
+
+
     }//GEN-LAST:event_listMouseClicked
 
     public static void main(String args[]) {
