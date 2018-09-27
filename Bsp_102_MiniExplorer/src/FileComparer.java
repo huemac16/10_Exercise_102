@@ -13,7 +13,7 @@ public class FileComparer implements Comparator<Data> {
             return 1;
         }
 
-        return 0;
+        return t.getName().compareTo(t1.getName());
     }
 
 }
