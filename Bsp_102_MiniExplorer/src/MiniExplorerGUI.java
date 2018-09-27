@@ -25,6 +25,12 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        list.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        list.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(list);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -40,6 +46,12 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listMouseClicked
+        if (evt.getClickCount() >= 2) {
+            String spPath = main.getAbsolutePath().replaceAll("\\", ";");
+        }
+    }//GEN-LAST:event_listMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -15,14 +15,18 @@ public class Data extends File {
 
     @Override
     public String toString() {
+        String det = "";
         if (isDirectory()) {
             return this.getName();
         } else {
+            if(this.canRead())det+="R";
+            if(this.canWrite())det+="W";
+            if(this.canExecute())det+="X";
             LocalDateTime ldt
                     = LocalDateTime.ofEpochSecond(
                             this.lastModified() / 1000, 0, ZoneOffset.UTC);
 
-            return String.format("%s %-30s %-30d KB", this.getName(), ldt.format(dtf), this.length() / 1024);
+            return String.format("%-20s %-20s %d KB  %s", this.getName(), ldt.format(dtf), this.length() / 1024 , det);
 
         }
 
