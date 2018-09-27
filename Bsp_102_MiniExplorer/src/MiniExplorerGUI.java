@@ -64,7 +64,7 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
 
             } else {
                 try {
-
+                    
                     main = new File(lm.showNext(main.getAbsolutePath(), list.getSelectedIndex()));
 
                 } catch (Exception e) {

@@ -28,10 +28,23 @@ public class DateiModell extends AbstractListModel {
     }
 
     public String showNext(String path, int idx) {
-        String newP = path + "\\" + data.get(idx).getName();
-        showCurrent(newP);
-        
+        String newP = "";
+        if (data.get(idx).isDirectory()) {
+            newP = path + "\\" + data.get(idx).getName();
+            showCurrent(newP);
+
+        } else {
+            try {
+                Process p;
+                p = Runtime.getRuntime().exec("cmd /c start " + path + "\\" + data.get(idx).getName());
+                p.waitFor();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         return newP;
+
     }
 
     @Override
