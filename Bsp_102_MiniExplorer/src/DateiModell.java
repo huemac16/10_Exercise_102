@@ -5,10 +5,18 @@ import javax.swing.AbstractListModel;
 
 public class DateiModell extends AbstractListModel {
 
-    private ArrayList<Datei> data = new ArrayList<>();
+    private ArrayList<Data> data = new ArrayList<>();
 
-    public void showCurrent() {
-        
+    public void showCurrent(String path) {
+        File file = new File(path);
+
+        data.add(new Data(".."));
+
+        for (File f : file.listFiles()) {
+            data.add(new Data(f.getAbsolutePath()));
+        }
+
+        fireIntervalAdded(this, data.size() - 1, data.size() - 1);
 
     }
 
