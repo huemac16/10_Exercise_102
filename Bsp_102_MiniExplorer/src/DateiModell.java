@@ -1,17 +1,25 @@
 
+import java.io.File;
+import java.util.ArrayList;
 import javax.swing.AbstractListModel;
 
+public class DateiModell extends AbstractListModel {
 
-public class DateiModell extends AbstractListModel{
+    private ArrayList<Datei> data = new ArrayList<>();
+
+    public void showCurrent() {
+        
+
+    }
 
     @Override
     public int getSize() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return data.size();
     }
 
     @Override
     public Object getElementAt(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return data.get(i);
     }
-    
+
 }
