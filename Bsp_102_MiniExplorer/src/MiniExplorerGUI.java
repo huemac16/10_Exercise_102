@@ -3,7 +3,7 @@ import java.io.File;
 
 public class MiniExplorerGUI extends javax.swing.JFrame {
 
-    private static File main = new File("D:\\git-practice\\Exercise_102\\Bsp_102_MiniExplorer");
+    private static File main = new File(".");
     private DateiModell lm = new DateiModell();
 
     public static File getMain() {
@@ -62,8 +62,12 @@ public class MiniExplorerGUI extends javax.swing.JFrame {
                 }
 
             } else {
-               
-                lm.showNext(main.getAbsolutePath(), list.getSelectedIndex());
+                try {
+
+                    main = new File(lm.showNext(main.getAbsolutePath(), list.getSelectedIndex()));
+
+                } catch (Exception e) {
+                }
 
             }
         }

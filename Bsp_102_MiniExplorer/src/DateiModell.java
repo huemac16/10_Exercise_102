@@ -27,9 +27,11 @@ public class DateiModell extends AbstractListModel {
         fireContentsChanged(this, 0, data.size() - 1);
     }
 
-    public void showNext(String path, int idx) {
+    public String showNext(String path, int idx) {
         String newP = path + "\\" + data.get(idx).getName();
         showCurrent(newP);
+        
+        return newP;
     }
 
     @Override
